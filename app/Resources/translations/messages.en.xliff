@@ -33,7 +33,7 @@
             </trans-unit>
             <trans-unit id="http_error.description">
                 <source>http_error.description</source>
-                <target>Bir hata oluştu.</target>
+                <target>There was an unknown error (HTTP %status_code%) that prevented to complete your request.</target>
             </trans-unit>
             <trans-unit id="http_error.suggestion">
                 <source>http_error.suggestion</source>
@@ -41,11 +41,11 @@
             </trans-unit>
             <trans-unit id="http_error_403.description">
                 <source>http_error_403.description</source>
-                <target>Kaynağa erişmek için izniniz bulunmuyor.</target>
+                <target>You don't have permission to access to this resource.</target>
             </trans-unit>
             <trans-unit id="http_error_403.suggestion">
                 <source>http_error_403.suggestion</source>
-                <target>Erişim için yöneticinizden izin isteyin.</target>
+                <target>Ask your manager or system administrator to grant you access to this resource.</target>
             </trans-unit>
             <trans-unit id="http_error_404.description">
                 <source>http_error_404.description</source>
@@ -53,11 +53,11 @@
             </trans-unit>
             <trans-unit id="http_error_404.suggestion">
                 <source>http_error_404.suggestion</source>
-                <target></target>
+                <target><![CDATA[Check out any misspelling in the URL or <a href="%url%">go back to the homepage</a>.]]></target>
             </trans-unit>
             <trans-unit id="http_error_500.description">
                 <source>http_error_500.description</source>
-                <target>Sunucu hatası.</target>
+                <target>There was an internal server error.</target>
             </trans-unit>
             <trans-unit id="http_error_500.suggestion">
                 <source>http_error_500.suggestion</source>
@@ -217,6 +217,10 @@
                 <source>title.post_new</source>
                 <target>Blog Yazısı Oluşturma</target>
             </trans-unit>
+            <trans-unit id="user.post_new">
+                            <source>user.post_new</source>
+                            <target>Yeni Üye Kaydı</target>
+                        </trans-unit>
             <trans-unit id="action.edit_contents">
                 <source>action.edit_contents</source>
                 <target>İçerik Düzenle</target>
@@ -310,11 +314,11 @@
             </trans-unit>
             <trans-unit id="help.reload_fixtures">
                 <source>help.reload_fixtures</source>
-                <target>Terminalden komut çalıştırın!</target>
+                <target>If these users don't work, reload application fixtures by running this command from the terminal:</target>
             </trans-unit>
             <trans-unit id="help.add_user">
                 <source>help.add_user</source>
-                <target></target>
+                <target>If you want to create new users, run this other command:</target>
             </trans-unit>
             <trans-unit id="help.more_information">
                 <source>help.more_information</source>

@@ -25,3 +25,7 @@ homepage:
         _controller: FrameworkBundle:Template:template
         template:    default/homepage.html.twig
         _locale:     '%locale%'
+
+user_registration:
+    path:     /register
+    defaults: { _controller: AppBundle:Register:register }

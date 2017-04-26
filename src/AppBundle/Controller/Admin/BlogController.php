@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace AppBundle\Controller\Admin;
 
@@ -157,6 +165,11 @@ class BlogController extends Controller
 
     /**
      * Creates a form to delete a Post entity by id.
+     *
+     * This is necessary because browsers don't support HTTP methods different
+     * from GET and POST. Since the controller that removes the blog posts expects
+     * a DELETE method, the trick is to create a simple form that *fakes* the
+     * HTTP DELETE method.
      *
      * @param Post $post The post object
      *

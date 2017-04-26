@@ -1,0 +1,68 @@
+/*
+Navicat SQLite Data Transfer
+
+Source Server         : enuygun
+Source Server Version : 30714
+Source Host           : :0
+
+Target Server Type    : SQLite
+Target Server Version : 30714
+File Encoding         : 65001
+
+Date: 2017-04-25 23:33:24
+*/
+
+PRAGMA foreign_keys = OFF;
+
+-- ----------------------------
+-- Table structure for symfony_demo_comment
+-- ----------------------------
+DROP TABLE IF EXISTS "main"."symfony_demo_comment";
+CREATE TABLE symfony_demo_comment (id INTEGER NOT NULL, post_id INTEGER NOT NULL, content CLOB NOT NULL, authorEmail VARCHAR(255) NOT NULL, publishedAt DATETIME NOT NULL, PRIMARY KEY(id), CONSTRAINT FK_53AD8F834B89032C FOREIGN KEY (post_id) REFERENCES symfony_demo_post (id) NOT DEFERRABLE INITIALLY IMMEDIATE);
+
+-- ----------------------------
+-- Records of symfony_demo_comment
+-- ----------------------------
+INSERT INTO "main"."symfony_demo_comment" VALUES (151, 33, 'yorum yapıyorum laannnnnn :)', 'sebahattin_admin@symfony.com', '2017-04-25 22:52:04');
+INSERT INTO "main"."symfony_demo_comment" VALUES (152, 33, 'yeni yorum yeni yorum...', 'sebahattin_admin@symfony.com', '2017-04-25 22:54:48');
+INSERT INTO "main"."symfony_demo_comment" VALUES (153, 33, 'ooooo güzel olmuş beyaaa', 'sebahattin_admin@symfony.com', '2017-04-25 22:55:58');
+
+-- ----------------------------
+-- Table structure for symfony_demo_post
+-- ----------------------------
+DROP TABLE IF EXISTS "main"."symfony_demo_post";
+CREATE TABLE symfony_demo_post (id INTEGER NOT NULL, title VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, summary VARCHAR(255) NOT NULL, content CLOB NOT NULL, authorEmail VARCHAR(255) NOT NULL, publishedAt DATETIME NOT NULL, PRIMARY KEY(id));
+
+-- ----------------------------
+-- Records of symfony_demo_post
+-- ----------------------------
+INSERT INTO "main"."symfony_demo_post" VALUES (31, 'deneme', 'deneme', 'asasdasdasdsad', 'asdasdasdasdasdasdasdasdasdasd', 'sebahattin_admin@symfony.com', '2017-04-25 22:45:33');
+INSERT INTO "main"."symfony_demo_post" VALUES (33, 'düzeltme yapıyoruz', 'd-zeltme-yap-yoruz', 'konumuz değişti hacı', 'içerikte değişti laaa', 'sebahattin_admin@symfony.com', '2017-04-25 22:48:03');
+INSERT INTO "main"."symfony_demo_post" VALUES (34, 'yeni yeni yazılar', 'yeni-yeni-yaz-lar', 'deneme', 'yoruma hazır ol', 'sebahattin_admin@symfony.com', '2017-04-25 23:00:46');
+INSERT INTO "main"."symfony_demo_post" VALUES (35, 'Enuygun.com', 'enuygun-com', 'Enuygun.com task çalışması hk.', 'Task çalışması devam ediyor :)', 'sebahattin_admin@symfony.com', '2017-04-25 23:06:24');
+
+-- ----------------------------
+-- Table structure for symfony_demo_user
+-- ----------------------------
+DROP TABLE IF EXISTS "main"."symfony_demo_user";
+CREATE TABLE symfony_demo_user (id INTEGER NOT NULL, username VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, roles CLOB NOT NULL, PRIMARY KEY(id));
+
+-- ----------------------------
+-- Records of symfony_demo_user
+-- ----------------------------
+INSERT INTO "main"."symfony_demo_user" VALUES (1, 'sebahattin_user', 'sebahattin_user@symfony.com', '$2y$13$ncDxgHwMP0Fa307o.aYRX.Lvft9KHxEkTVriRvKCW8GHMBpVEhVSa', '[]');
+INSERT INTO "main"."symfony_demo_user" VALUES (2, 'sebahattin_admin', 'sebahattin_admin@symfony.com', '$2y$13$Jvei1FAFhZb6GbJinZaaNu6nhijWKB6wibfXzIErdZD8I6F9Hhbfu', '["ROLE_ADMIN"]');
+
+-- ----------------------------
+-- Indexes structure for table symfony_demo_comment
+-- ----------------------------
+CREATE INDEX "main"."IDX_53AD8F834B89032C"
+ON "symfony_demo_comment" ("post_id" ASC);
+
+-- ----------------------------
+-- Indexes structure for table symfony_demo_user
+-- ----------------------------
+CREATE UNIQUE INDEX "main"."UNIQ_8FB094A1E7927C74"
+ON "symfony_demo_user" ("email" ASC);
+CREATE UNIQUE INDEX "main"."UNIQ_8FB094A1F85E0677"
+ON "symfony_demo_user" ("username" ASC);
